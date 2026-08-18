@@ -1,0 +1,430 @@
+{
+  "version": "0.3.0",
+  "updatedAt": "2026-08-19",
+  "cards": [
+    {
+      "id": "1325",
+      "cats": [
+        "peace",
+        "feminist"
+      ],
+      "type": "BASICS",
+      "time": "1 min",
+      "title": "UNSCR 1325 — почему ты всё время её встречаешь?",
+      "bodyHtml": "<p>Резолюция Совета Безопасности ООН 1325 была принята в 2000 году. Она закрепила на уровне Совбеза связь между <strong>участием женщин</strong>, предотвращением конфликтов, защитой и миростроительством.</p><p class=\"translation\"><strong>Women, Peace and Security (WPS)</strong> — «Женщины, мир и безопасность».</p>",
+      "interaction": {
+        "kind": "reveal",
+        "label": "проверить себя",
+        "answer": "Попробуй назвать хотя бы две вещи, которых касается 1325: участие женщин в принятии решений; защита женщин и девочек; гендерная перспектива в мирных и безопасностных процессах."
+      },
+      "source": {
+        "title": "United Nations — Security Council Resolution 1325",
+        "url": "https://digitallibrary.un.org/record/426075"
+      }
+    },
+    {
+      "id": "fac-open",
+      "cats": [
+        "english",
+        "tools"
+      ],
+      "type": "FACILITATION ENGLISH",
+      "time": "30 sec",
+      "title": "Как открыть сессию без “So… today we will talk about…”",
+      "bodyHtml": "<p><strong>“Before we begin, I’d like to briefly explain what we’re going to do today and what you can expect from this session.”</strong></p><p class=\"translation\">«Прежде чем начать, я коротко объясню, что мы сегодня будем делать и чего ожидать от этой встречи».</p><div class=\"say\">🎙 Скажи фразу вслух один раз, не читая по словам.</div>",
+      "source": {
+        "title": "Berghof Foundation — Basics of Dialogue Facilitation",
+        "url": "https://berghof-foundation.org/library/basics-of-dialogue-facilitation"
+      }
+    },
+    {
+      "id": "care",
+      "cats": [
+        "feminist",
+        "peace"
+      ],
+      "type": "FEMINIST POLITICAL ECONOMY",
+      "time": "1 min",
+      "title": "Кто “восстанавливает страну” после войны?",
+      "bodyHtml": "<p>Восстановление — это не только дороги, институты и ВВП. Кто-то одновременно готовит еду, ухаживает за детьми, ранеными и пожилыми, поддерживает домохозяйства и сообщества.</p><p><strong>Care work (труд по заботе)</strong> бывает оплачиваемым и неоплачиваемым — и является частью экономики, даже когда не отражается в обычных экономических показателях.</p>",
+      "interaction": {
+        "kind": "reveal",
+        "label": "феминистский вопрос",
+        "answer": "Что изменится в оценке «стоимости войны» и «восстановления», если считать не только разрушенную инфраструктуру и оплачиваемый труд, но и неоплачиваемую заботу?"
+      },
+      "source": {
+        "title": "International Labour Organization — Care economy",
+        "url": "https://www.ilo.org/topics-and-sectors/care-economy"
+      }
+    },
+    {
+      "id": "connectors",
+      "cats": [
+        "peace",
+        "tools"
+      ],
+      "type": "TOOL",
+      "time": "1 min",
+      "title": "Connectors & dividers",
+      "bodyHtml": "<p><strong>Connectors</strong> (факторы, связывающие стороны) — отношения, институты, интересы или практики, которые продолжают связывать людей.</p><p><strong>Dividers</strong> (факторы разделения) — то, что усиливает напряжение, дистанцию или конфликт.</p><p>Перед интервенцией полезно спросить не только «в чём конфликт?», но и «что всё ещё удерживает социальную ткань вместе?»</p>",
+      "interaction": {
+        "kind": "reveal",
+        "label": "попробовать",
+        "answer": "Возьми знакомый тебе конфликт. Назови 3 dividers и 3 connectors. Потом спроси: может ли наша интервенция случайно усилить один из dividers?"
+      },
+      "source": {
+        "title": "Berghof Foundation — Handbook for Conflict Transformation",
+        "url": "https://berghof-foundation.org/library/berghof-handbook-for-conflict-transformation"
+      }
+    },
+    {
+      "id": "voices",
+      "cats": [
+        "english",
+        "tools"
+      ],
+      "type": "FACILITATION ENGLISH",
+      "time": "25 sec",
+      "title": "Как пригласить в разговор тех, кого ещё не слышно",
+      "bodyHtml": "<p><strong>“I’d like to pause here and make some space for voices we haven’t heard yet.”</strong></p><p class=\"translation\">«Я бы хотела здесь остановиться и дать пространство тем, кого мы ещё не слышали».</p><p class=\"micro\">make some space — здесь не про физическое пространство, а про создание возможности войти в разговор.</p>",
+      "interaction": {
+        "kind": "reveal",
+        "label": "ещё мягче",
+        "answer": "“Before we continue, I’m curious whether someone who hasn’t spoken yet would like to come in.”"
+      },
+      "source": {
+        "title": "Berghof Foundation — Facilitation Skills for Interpersonal Transformation",
+        "url": "https://berghof-foundation.org/library/facilitation-skills-for-interpersonal-transformation"
+      }
+    },
+    {
+      "id": "meaningful",
+      "cats": [
+        "english",
+        "feminist",
+        "peace"
+      ],
+      "type": "VOCABULARY",
+      "time": "40 sec",
+      "title": "meaningful participation ≠ просто присутствие",
+      "bodyHtml": "<p><strong>women’s meaningful participation in peace processes</strong></p><p class=\"translation\">содержательное / реальное участие женщин в мирных процессах</p><p>Слово <strong>meaningful</strong> смещает вопрос от «женщины были в комнате?» к «могли ли они реально влиять на повестку и решения?»</p>",
+      "interaction": {
+        "kind": "open",
+        "label": "сравнить с вариантом",
+        "prompt": "Finish: Women’s presence at the negotiating table does not necessarily mean…",
+        "placeholder": "напиши продолжение по-английски",
+        "model": "“Women’s presence at the negotiating table does not necessarily mean meaningful participation or real influence over the outcome.”",
+        "check": [
+          "есть законченная мысль",
+          "meaningful participation / influence переданы по смыслу",
+          "не обязательно повторять модель дословно"
+        ]
+      },
+      "source": {
+        "title": "UN Women — Women’s meaningful participation in peace processes",
+        "url": "https://www.unwomen.org/en/digital-library/publications/2021/06/proceedings-womens-meaningful-participation-in-peace-processes"
+      }
+    },
+    {
+      "id": "conditional",
+      "cats": [
+        "english"
+      ],
+      "type": "GRAMMAR IN CONTEXT",
+      "time": "45 sec",
+      "title": "If you were facilitating this dialogue…",
+      "bodyHtml": "<p><strong>If you were facilitating this dialogue, what would you do?</strong></p><p>Это <strong>second conditional</strong>: гипотетическая или маловероятная ситуация.</p><p class=\"translation\">if + past simple → would + infinitive</p>",
+      "interaction": {
+        "kind": "open",
+        "label": "проверить ответ",
+        "prompt": "If one participant dominated the conversation, I would…",
+        "placeholder": "напиши продолжение по-английски",
+        "model": "Например: “I would pause the discussion and invite other voices into the conversation.”",
+        "check": [
+          "после would — глагол без to",
+          "ответ описывает гипотетическое действие",
+          "фраза звучит естественно и понятно"
+        ]
+      },
+      "source": {
+        "title": "British Council LearnEnglish — Conditionals",
+        "url": "https://learnenglish.britishcouncil.org/free-resources/grammar/b1-b2/conditionals-zero-first-second"
+      }
+    },
+    {
+      "id": "reframe",
+      "cats": [
+        "english",
+        "tools",
+        "peace"
+      ],
+      "type": "TOOL + ENGLISH",
+      "time": "1 min",
+      "title": "Reframing (переформулирование)",
+      "bodyHtml": "<p class=\"quote\">Participant: “They don’t give a shit about us. There’s no point talking to them.”</p><p>Твоя задача — не подтвердить обвинение и не спорить, а проверить, какую потребность или переживание ты слышишь.</p>",
+      "interaction": {
+        "kind": "reveal",
+        "label": "как можно ответить?",
+        "answer": "“It sounds like there’s a lot of frustration about not feeling heard. Is that right?” — ты предлагаешь гипотезу, а не присваиваешь участнице её смысл."
+      },
+      "source": {
+        "title": "Berghof Foundation — Facilitation Skills for Interpersonal Transformation",
+        "url": "https://berghof-foundation.org/library/facilitation-skills-for-interpersonal-transformation"
+      }
+    },
+    {
+      "id": "shit-local",
+      "cats": [
+        "fun",
+        "peace"
+      ],
+      "type": "PROFESSIONAL SHITPOST",
+      "time": "10 sec",
+      "title": "locally owned peacebuilding™",
+      "bodyHtml": "<p><strong>international organisation:</strong><br>WE BELIEVE IN LOCALLY OWNED PEACEBUILDING</p><p><strong>also international organisation:</strong><br><em>application must be submitted in English<br>deadline: tomorrow<br>please describe local ownership in 800 characters</em></p>",
+      "source": null
+    },
+    {
+      "id": "retrieval-care",
+      "cats": [
+        "feminist",
+        "peace"
+      ],
+      "type": "RETRIEVAL",
+      "time": "20 sec",
+      "title": "Без подсказки: что такое care work?",
+      "bodyHtml": "<p>Не листай сразу дальше. Попробуй одним предложением объяснить, что включает <strong>care work</strong>.</p>",
+      "interaction": {
+        "kind": "reveal",
+        "label": "показать после ответа",
+        "answer": "Care work — оплачиваемая и неоплачиваемая деятельность по прямой и косвенной заботе о людях: уход, воспитание, домашний труд и поддержание повседневной жизни."
+      },
+      "source": {
+        "title": "International Labour Organization — Care work and care jobs",
+        "url": "https://www.ilo.org/publications/major-publications/care-work-and-care-jobs-future-decent-work"
+      }
+    },
+    {
+      "id": "reported",
+      "cats": [
+        "english",
+        "tools"
+      ],
+      "type": "GRAMMAR FOR FACILITATORS",
+      "time": "50 sec",
+      "title": "Reported speech — чтобы пересказывать голоса группы",
+      "bodyHtml": "<p><strong>One participant said that she didn’t feel safe.</strong></p><p><strong>Another participant argued that the process had been unfair.</strong></p><p>Reported speech нужен фасилитаторке буквально постоянно: в summary, debrief и при отражении нескольких позиций.</p>",
+      "interaction": {
+        "kind": "exact",
+        "label": "проверить",
+        "prompt": "Direct: “I don’t think they listened to us.”",
+        "placeholder": "She said that…",
+        "answers": [
+          "she said that she didn’t think they had listened to them",
+          "she said that she did not think they had listened to them"
+        ],
+        "model": "She said that she didn’t think they had listened to them."
+      },
+      "source": {
+        "title": "British Council LearnEnglish — Reported speech: statements",
+        "url": "https://learnenglish.britishcouncil.org/free-resources/grammar/b1-b2/reported-speech-statements"
+      }
+    },
+    {
+      "id": "dialogue",
+      "cats": [
+        "peace"
+      ],
+      "type": "IDEA",
+      "time": "1 min",
+      "title": "Диалог не обязан закончиться согласием",
+      "bodyHtml": "<p>В conflict transformation диалог ценен не только как способ договориться. Он может менять качество отношений, расширять понимание позиций и создавать возможность оставаться во взаимодействии при сохраняющихся разногласиях.</p><p class=\"translation\"><strong>dialogue</strong> — диалог; <strong>agreement</strong> — согласие; <strong>consensus</strong> — консенсус.</p>",
+      "interaction": {
+        "kind": "open",
+        "label": "сравнить с вариантом",
+        "prompt": "Explain in English: почему диалог может быть ценным без согласия?",
+        "placeholder": "1–2 предложения",
+        "model": "“Dialogue can still be valuable even when participants do not reach agreement, because it can improve understanding and change the quality of relationships.”",
+        "check": [
+          "есть идея, что agreement не обязателен",
+          "объяснено, в чём остаётся ценность диалога",
+          "можно использовать understanding / relationships / trust"
+        ]
+      },
+      "source": {
+        "title": "Berghof Foundation — Dialogue",
+        "url": "https://berghof-foundation.org/themes/dialogue"
+      }
+    },
+    {
+      "id": "fem-lens",
+      "cats": [
+        "feminist",
+        "peace"
+      ],
+      "type": "FEMINIST LENS",
+      "time": "1 min",
+      "title": "В делегации стало 30% женщин. Процесс стал феминистским?",
+      "bodyHtml": "<p>Само присутствие женщин не говорит нам, кто задаёт повестку, чьи вопросы считаются «безопасностью» и кто реально влияет на решения.</p><p>Полезно отличать <strong>representation (представительство)</strong> от <strong>influence (влияния)</strong>.</p>",
+      "interaction": {
+        "kind": "reveal",
+        "label": "какой вопрос сильнее?",
+        "answer": "Не только «кто присутствует?», но и «кто может определять повестку, предлагать решения и влиять на результат?»"
+      },
+      "source": {
+        "title": "UN Women — Women’s participation in peace processes",
+        "url": "https://knowledge.unwomen.org/en/digital-library/publications/2021/08/strengthening-womens-participation-in-peace-processes"
+      }
+    },
+    {
+      "id": "watch-1325",
+      "cats": [
+        "peace",
+        "english",
+        "feminist"
+      ],
+      "type": "WATCH",
+      "time": "2 min",
+      "title": "Есть 2 минуты? Посмотри WPS на английском",
+      "bodyHtml": "<p><strong>What is Women, Peace and Security?</strong></p><p>Короткое видео на английском. Перед просмотром обрати внимание на слова <strong>participation</strong>, <strong>protection</strong>, <strong>peace and security</strong>.</p>",
+      "interaction": {
+        "kind": "reveal",
+        "label": "после просмотра",
+        "answer": "Попробуй без текста назвать по-английски две причины, почему участие женщин связывают с peace and security."
+      },
+      "source": {
+        "title": "United Nations Web TV — Women, Peace and Security explainer",
+        "url": "https://webtv.un.org/en/asset/k1e/k1eg6z6li6"
+      }
+    },
+    {
+      "id": "check-in",
+      "cats": [
+        "english",
+        "tools"
+      ],
+      "type": "FACILITATION ENGLISH",
+      "time": "35 sec",
+      "title": "Как сделать check-in не деревянно",
+      "bodyHtml": "<p><strong>“Before we get into the agenda, I’d like to hear briefly how everyone is arriving today.”</strong></p><p class=\"translation\">«Прежде чем перейти к повестке, я бы хотела коротко услышать, в каком состоянии каждый сегодня приходит на встречу».</p>",
+      "interaction": {
+        "kind": "reveal",
+        "label": "вариант конкретнее",
+        "answer": "“In one or two words, what are you bringing into the room today?” — если нужен очень короткий check-in."
+      },
+      "source": {
+        "title": "Berghof Foundation — Dialogue facilitation resources",
+        "url": "https://berghof-foundation.org/themes/dialogue"
+      }
+    },
+    {
+      "id": "world-mauss",
+      "cats": [
+        "world"
+      ],
+      "type": "Я ПОЗНАЮ МИР · антропология",
+      "time": "2 min",
+      "title": "Почему подарок может создавать обязательство?",
+      "bodyHtml": "<p>В классическом эссе <strong>«Дар»</strong> Марсель Мосс рассматривал обмен подарками не как нейтральную передачу вещей, а как социальную практику, которая создаёт отношения взаимности и обязательства.</p><p><strong>Вопрос в сторону:</strong> что меняется, если так же посмотреть на отношения между донором и организацией, которая получает ресурсы?</p>",
+      "source": {
+        "title": "Encyclopaedia Britannica — Marcel Mauss and The Gift",
+        "url": "https://www.britannica.com/biography/Marcel-Mauss"
+      }
+    },
+    {
+      "id": "world-conformity",
+      "cats": [
+        "world"
+      ],
+      "type": "Я ПОЗНАЮ МИР · социальная психология",
+      "time": "2 min",
+      "title": "Почему группа может заставлять сомневаться в очевидном?",
+      "bodyHtml": "<p>Исследования конформности Соломона Аша стали классическим примером того, как давление группы может влиять даже на простые публичные суждения.</p><p><strong>Связь с фасилитацией:</strong> молчание в комнате не обязательно означает согласие.</p>",
+      "interaction": {
+        "kind": "reveal",
+        "label": "подумать как фасилитаторка",
+        "answer": "Какие способы сбора мнений уменьшают давление публичного большинства? Например: индивидуальное письмо перед обсуждением, анонимный опрос, работа в парах."
+      },
+      "source": {
+        "title": "American Psychological Association — Conformity",
+        "url": "https://dictionary.apa.org/conformity"
+      }
+    },
+    {
+      "id": "world-framing",
+      "cats": [
+        "world",
+        "english"
+      ],
+      "type": "Я ПОЗНАЮ МИР · язык",
+      "time": "1 min",
+      "title": "Framing: одно событие, разные рамки",
+      "bodyHtml": "<p><strong>Framing (фрейминг / задание рамки)</strong> — способ представить вопрос так, чтобы одни его аспекты стали заметнее других.</p><p>Слова «беспорядки», «протест», «восстание» или «общественные волнения» могут направлять внимание к разным сторонам одного события.</p>",
+      "interaction": {
+        "kind": "reveal",
+        "label": "мини-практика",
+        "answer": "Возьми знакомый конфликт и придумай три разных заголовка, каждый из которых делает центральной другую сторону происходящего."
+      },
+      "source": {
+        "title": "Encyclopaedia Britannica — Framing",
+        "url": "https://www.britannica.com/topic/framing"
+      }
+    },
+    {
+      "id": "world-ostrom",
+      "cats": [
+        "world",
+        "peace"
+      ],
+      "type": "Я ПОЗНАЮ МИР · институты",
+      "time": "2 min",
+      "title": "Люди правда всегда уничтожают общий ресурс?",
+      "bodyHtml": "<p>Исследования Элинор Остром показали, что сообщества при определённых институциональных условиях способны устойчиво управлять общими ресурсами без простой схемы «рынок или государство».</p><p><strong>Почему это интересно для сообществ:</strong> правила, участие в их создании, доверие и механизмы разрешения конфликтов могут быть частью устойчивого самоуправления.</p>",
+      "source": {
+        "title": "Nobel Prize — Elinor Ostrom: Economic Governance",
+        "url": "https://www.nobelprize.org/prizes/economic-sciences/2009/ostrom/facts/"
+      }
+    },
+    {
+      "id": "world-emotions",
+      "cats": [
+        "world",
+        "feminist"
+      ],
+      "type": "Я ПОЗНАЮ МИР · эмоции",
+      "time": "2 min",
+      "title": "А эмоции вообще бывают политическими?",
+      "bodyHtml": "<p>Исследования эмоций в политике рассматривают страх, гнев, стыд, надежду и солидарность не только как личные состояния, но и как силы, которые влияют на коллективное действие, принадлежность и политические решения.</p><p><strong>Вопрос:</strong> какие эмоции в твоей работе обычно считаются «непрофессиональными», хотя реально определяют процесс?</p>",
+      "source": {
+        "title": "Oxford Research Encyclopedia — Emotions in Politics",
+        "url": "https://oxfordre.com/politics/"
+      }
+    },
+    {
+      "id": "world-bystander",
+      "cats": [
+        "world"
+      ],
+      "type": "Я ПОЗНАЮ МИР · психология",
+      "time": "90 sec",
+      "title": "Почему «кто-нибудь точно поможет» — опасная мысль",
+      "bodyHtml": "<p><strong>Diffusion of responsibility (диффузия ответственности)</strong> описывает ситуацию, когда при наличии других людей личное чувство обязанности вмешаться может снижаться.</p><p>Для команд это полезный вопрос: если задача принадлежит «всем», принадлежит ли она кому-нибудь конкретно?</p>",
+      "source": {
+        "title": "APA Dictionary — Diffusion of responsibility",
+        "url": "https://dictionary.apa.org/diffusion-of-responsibility"
+      }
+    },
+    {
+      "id": "shit-consensus",
+      "cats": [
+        "fun",
+        "tools"
+      ],
+      "type": "PROFESSIONAL SHITPOST",
+      "time": "8 sec",
+      "title": "горизонтальная организация, 23:48",
+      "bodyHtml": "<p><strong>someone:</strong> давайте просто быстро примем решение консенсусом</p><p><strong>the facilitator:</strong><br>🙂</p>",
+      "source": null
+    }
+  ]
+}

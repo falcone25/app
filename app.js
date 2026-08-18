@@ -1,27 +1,238 @@
-const cards = [
-{ id:'1325', cats:['peace','feminist'], type:'BASICS', time:'1 min', title:'UNSCR 1325 — почему ты всё время её встречаешь?', body:`<p>Резолюция Совета Безопасности ООН 1325 была принята в 2000 году. Она закрепила на уровне Совбеза связь между <strong>участием женщин</strong>, предотвращением конфликтов, защитой и миростроительством.</p><p class="translation"><strong>Women, Peace and Security (WPS)</strong> — «Женщины, мир и безопасность».</p>`, interaction:{kind:'reveal',label:'проверить себя',answer:'Попробуй назвать хотя бы две вещи, которых касается 1325: участие женщин в принятии решений; защита женщин и девочек; гендерная перспектива в мирных и безопасностных процессах.'}, source:['United Nations — Security Council Resolution 1325','https://digitallibrary.un.org/record/426075'] },
-{ id:'fac-open', cats:['english','tools'], type:'FACILITATION ENGLISH', time:'30 sec', title:'Как открыть сессию без “So… today we will talk about…”', body:`<p><strong>“Before we begin, I’d like to briefly explain what we’re going to do today and what you can expect from this session.”</strong></p><p class="translation">«Прежде чем начать, я коротко объясню, что мы сегодня будем делать и чего ожидать от этой встречи».</p><div class="say">🎙 Скажи фразу вслух один раз, не читая по словам.</div>`, source:['Berghof Foundation — Basics of Dialogue Facilitation','https://berghof-foundation.org/files/publications/Ropers_BasicsofDialogueFacilitation.pdf'] },
-{ id:'care', cats:['feminist','peace'], type:'FEMINIST POLITICAL ECONOMY', time:'1 min', title:'Кто “восстанавливает страну” после войны?', body:`<p>Восстановление — это не только дороги, институты и ВВП. Кто-то одновременно готовит еду, ухаживает за детьми, ранеными и пожилыми, поддерживает домохозяйства и сообщества.</p><p><strong>Care work (труд по заботе)</strong> бывает оплачиваемым и неоплачиваемым — и является частью экономики, даже когда не отражается в обычных экономических показателях.</p>`, interaction:{kind:'reveal',label:'феминистский вопрос',answer:'Что изменится в оценке «стоимости войны» и «восстановления», если считать не только разрушенную инфраструктуру и оплачиваемый труд, но и неоплачиваемую заботу?'}, source:['International Labour Organization — Care economy','https://www.ilo.org/topics-and-sectors/care-economy'] },
-{ id:'connectors', cats:['peace','tools'], type:'TOOL', time:'1 min', title:'Connectors & dividers', body:`<p><strong>Connectors</strong> (факторы, связывающие стороны) — отношения, институты, интересы или практики, которые продолжают связывать людей.</p><p><strong>Dividers</strong> (факторы разделения) — то, что усиливает напряжение, дистанцию или конфликт.</p><p>Перед интервенцией полезно спросить не только «в чём конфликт?», но и «что всё ещё удерживает социальную ткань вместе?»</p>`, interaction:{kind:'reveal',label:'попробовать',answer:'Возьми знакомый тебе конфликт. Назови 3 dividers и 3 connectors. Потом спроси: может ли наша интервенция случайно усилить один из dividers?'}, source:['Berghof Foundation — Handbook for Conflict Transformation','https://berghof-foundation.org/library/berghof-handbook-for-conflict-transformation'] },
-{ id:'voices', cats:['english','tools'], type:'FACILITATION ENGLISH', time:'25 sec', title:'Как пригласить в разговор тех, кого ещё не слышно', body:`<p><strong>“I’d like to pause here and make some space for voices we haven’t heard yet.”</strong></p><p class="translation">«Я бы хотела здесь остановиться и дать пространство тем, кого мы ещё не слышали».</p><p class="micro">make some space — здесь не про физическое пространство, а про создание возможности войти в разговор.</p>`, interaction:{kind:'reveal',label:'ещё мягче',answer:'“Before we continue, I’m curious whether someone who hasn’t spoken yet would like to come in.”'}, source:['Berghof Foundation — Facilitation Skills for Interpersonal Transformation','https://berghof-foundation.org/library/facilitation-skills-for-interpersonal-transformation'] },
-{ id:'meaningful', cats:['english','feminist','peace'], type:'VOCABULARY', time:'40 sec', title:'meaningful participation ≠ просто присутствие', body:`<p><strong>women’s meaningful participation in peace processes</strong></p><p class="translation">содержательное / реальное участие женщин в мирных процессах</p><p>Слово <strong>meaningful</strong> смещает вопрос от «женщины были в комнате?» к «могли ли они реально влиять на повестку и решения?»</p>`, interaction:{kind:'reveal',label:'say it in English',answer:'Try: “Representation matters, but presence alone does not guarantee meaningful participation or influence over the outcome.”'}, source:["UN Women — Women's meaningful participation in peace processes",'https://www.unwomen.org/en/digital-library/publications/2021/06/proceedings-womens-meaningful-participation-in-peace-processes'] },
-{ id:'conditional', cats:['english'], type:'GRAMMAR IN CONTEXT', time:'45 sec', title:'If you were facilitating this dialogue…', body:`<p><strong>If you were facilitating this dialogue, what would you do?</strong></p><p>Это <strong>second conditional</strong>: гипотетическая или маловероятная ситуация.</p><p class="translation">if + past simple → would + infinitive</p>`, interaction:{kind:'reveal',label:'мини-практика',answer:'Закончи вслух: “If one participant dominated the conversation, I would…”'}, source:['British Council LearnEnglish — Zero, first and second conditionals','https://learnenglish.britishcouncil.org/free-resources/grammar/b1-b2/conditionals-zero-first-second'] },
-{ id:'reframe', cats:['english','tools','peace'], type:'TOOL + ENGLISH', time:'1 min', title:'Reframing (переформулирование)', body:`<p class="quote">Participant: “They don’t give a shit about us. There’s no point talking to them.”</p><p>Твоя задача — не подтвердить обвинение и не спорить, а проверить, какую потребность или переживание ты слышишь.</p>`, interaction:{kind:'reveal',label:'как можно ответить?',answer:'“It sounds like there’s a lot of frustration about not feeling heard. Is that right?” — ты предлагаешь гипотезу, а не присваиваешь участнице её смысл.'}, source:['Berghof Foundation — Facilitation Skills for Interpersonal Transformation','https://berghof-foundation.org/library/facilitation-skills-for-interpersonal-transformation'] },
-{ id:'shit-local', cats:['fun','peace'], type:'PROFESSIONAL SHITPOST', time:'10 sec', title:'locally owned peacebuilding™', body:`<p><strong>international organisation:</strong><br>WE BELIEVE IN LOCALLY OWNED PEACEBUILDING</p><p><strong>also international organisation:</strong><br><em>application must be submitted in English<br>deadline: tomorrow<br>please describe local ownership in 800 characters</em></p>`, source:null },
-{ id:'retrieval-care', cats:['feminist','peace'], type:'RETRIEVAL', time:'20 sec', title:'Без подсказки: что такое care work?', body:`<p>Не листай сразу дальше. Попробуй одним предложением объяснить, что включает <strong>care work</strong>.</p>`, interaction:{kind:'reveal',label:'показать после ответа',answer:'Care work — оплачиваемая и неоплачиваемая деятельность по прямой и косвенной заботе о людях: уход, воспитание, домашний труд и поддержание повседневной жизни.'}, source:['International Labour Organization — Care work and care jobs','https://www.ilo.org/publications/major-publications/care-work-and-care-jobs-future-decent-work'] },
-{ id:'reported', cats:['english','tools'], type:'GRAMMAR FOR FACILITATORS', time:'50 sec', title:'Reported speech — чтобы пересказывать голоса группы', body:`<p><strong>One participant said that she didn’t feel safe.</strong></p><p><strong>Another participant argued that the process had been unfair.</strong></p><p>Reported speech нужен фасилитаторке буквально постоянно: в summary, debrief и при отражении нескольких позиций.</p>`, interaction:{kind:'reveal',label:'переформулируй',answer:'Direct: “I don’t think they listened to us.” → Reported: “She said that she didn’t think they had listened to them.”'}, source:['British Council LearnEnglish — Reported speech: statements','https://learnenglish.britishcouncil.org/free-resources/grammar/b1-b2/reported-speech-statements'] },
-{ id:'dialogue', cats:['peace'], type:'IDEA', time:'1 min', title:'Диалог не обязан закончиться согласием', body:`<p>В conflict transformation диалог ценен не только как способ договориться. Он может менять качество отношений, расширять понимание позиций и создавать возможность оставаться во взаимодействии при сохраняющихся разногласиях.</p><p class="translation"><strong>dialogue</strong> — диалог; <strong>agreement</strong> — согласие; <strong>consensus</strong> — консенсус.</p>`, interaction:{kind:'reveal',label:'say it in English',answer:'“Dialogue can still be valuable even when participants do not reach agreement.”'}, source:['Berghof Foundation — Dialogue','https://berghof-foundation.org/themes/dialogue'] },
-{ id:'fem-lens', cats:['feminist','peace'], type:'FEMINIST LENS', time:'1 min', title:'В делегации стало 30% женщин. Процесс стал феминистским?', body:`<p><strong>Не обязательно.</strong> Представительство важно, но само присутствие ещё не отвечает на вопросы: кто формирует повестку? какие темы считаются «безопасностью»? у кого есть реальное влияние?</p><p>Феминистская оптика заставляет смотреть не только на число участниц, но и на <strong>power (власть)</strong> внутри процесса.</p>`, source:["UN Women — Women's meaningful participation in negotiating peace",'https://www.unwomen.org/en/digital-library/publications/2018/10/egm-report-womens-meaningful-participation-in-negotiating-peace'] },
-{ id:'case', cats:['peace','tools'], type:'MICRO-SIMULATION', time:'1 min', title:'“Зачем мы вообще разговариваем с этими людьми?”', body:`<p>Участница говорит: «Они даже не признают, что сделали. Я не понимаю, зачем мы здесь».</p><p><strong>Что ты делаешь первым?</strong></p>`, interaction:{kind:'choices',options:['A. Напоминаю правила диалога','B. Спрашиваю, что ей сейчас нужно, чтобы продолжить','C. Сразу даю слово другой стороне','D. Объявляю паузу'],answer:'Здесь нет универсально «правильной кнопки». B может открыть потребность и вернуть участнице агентность; D может быть лучше при высокой активации; C способен резко эскалировать. Профессиональная задача — читать момент, а не угадывать тест.'}, source:['Berghof Foundation — Basics of Dialogue Facilitation','https://berghof-foundation.org/files/publications/Ropers_BasicsofDialogueFacilitation.pdf'] },
-{ id:'unpaid-stat', cats:['feminist','peace'], type:'DATA POINT', time:'35 sec', title:'Неоплачиваемая забота — не “частная мелочь”', body:`<p>ILO оценивает, что <strong>708 млн женщин</strong> во всём мире находятся вне рабочей силы из-за обязанностей по неоплачиваемой заботе.</p><p>Для feminist political economy это напоминание: распределение заботы напрямую связано с доступом к доходу, времени и политическому участию.</p>`, source:['International Labour Organization — Unpaid care work prevents 708 million women from participating in the labour market','https://www.ilo.org/resource/news/unpaid-care-work-prevents-708-million-women-participating-labour-market'] },
-{ id:'watch', cats:['english','peace'], type:'WATCH / LEARN', time:'6 min', title:'Хочешь 6 минут английского вместо ещё одного свайпа?', body:`<p><strong>BBC Learning English — Second conditional</strong></p><p>Посмотри короткий урок, а потом вернись и закончи фразу:</p><p class="quote">If I were facilitating a dialogue between highly polarised groups, I would…</p><p class="micro">Уровень: B1–B2 · цель: grammar + speaking</p>`, source:['BBC Learning English — 6 Minute Grammar playlist','https://www.youtube.com/playlist?list=PLcetZ6gSk96_zHuVg6Ecy2F7j4Aq4valQ'] }
-];
+const $=(sel,root=document)=>root.querySelector(sel);
+const $$=(sel,root=document)=>[...root.querySelectorAll(sel)];
 
-const feed=document.getElementById('feed'); const tpl=document.getElementById('cardTemplate');
-let filter='all'; let savedOnly=false; let saved=new Set(JSON.parse(localStorage.getItem('peacefeed-saved')||'[]'));
-function render(){ feed.innerHTML=''; const shown=cards.filter(c=>(filter==='all'||c.cats.includes(filter))&&(!savedOnly||saved.has(c.id))); if(!shown.length){feed.innerHTML='<div class="empty">Здесь пока пусто. Сохрани несколько карточек ♡</div>';return;} shown.forEach(c=>{const el=tpl.content.firstElementChild.cloneNode(true); el.dataset.id=c.id; el.querySelector('.pill').textContent=c.type; el.querySelector('.time').textContent=c.time; el.querySelector('h2').textContent=c.title; el.querySelector('.body').innerHTML=c.body; const inter=el.querySelector('.interactive'); if(c.interaction){ if(c.interaction.kind==='reveal'){inter.innerHTML=`<button class="reveal primary">${c.interaction.label}</button><div class="answer">${c.interaction.answer}</div>`; inter.querySelector('.reveal').onclick=()=>inter.querySelector('.answer').classList.toggle('show');} else {inter.innerHTML=c.interaction.options.map(o=>`<button class="choice">${o}</button>`).join('')+`<div class="answer">${c.interaction.answer}</div>`; inter.querySelectorAll('.choice').forEach(b=>b.onclick=()=>inter.querySelector('.answer').classList.add('show'));}}
- const src=el.querySelector('.source'); if(c.source){src.innerHTML=`<span class="source-label">SOURCE / READ MORE</span><a target="_blank" rel="noopener" href="${c.source[1]}">${c.source[0]} ↗</a>`} else {src.innerHTML='<span class="source-label">SHITPOST</span>Это шутка, не factual claim.'}
- const sb=el.querySelector('.save-btn'); if(saved.has(c.id)){sb.classList.add('saved');sb.textContent='♥ сохранено'} sb.onclick=()=>{saved.has(c.id)?saved.delete(c.id):saved.add(c.id);localStorage.setItem('peacefeed-saved',JSON.stringify([...saved]));render()}; feed.appendChild(el);});}
-document.querySelectorAll('.chip').forEach(b=>b.onclick=()=>{document.querySelectorAll('.chip').forEach(x=>x.classList.remove('active'));b.classList.add('active');filter=b.dataset.filter;render()});
-document.getElementById('savedToggle').onclick=()=>{savedOnly=!savedOnly;document.getElementById('savedToggle').textContent=savedOnly?'♥':'♡';render()};
-if('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js').catch(()=>{}); render();
+const feed=$('#feed');
+const tpl=$('#cardTemplate');
+const chips=$('#chips');
+const notesScreen=$('#notesScreen');
+const reflectionScreen=$('#reflectionScreen');
+const noteDialog=$('#noteDialog');
+const repeatDialog=$('#repeatDialog');
+
+const memoryStore={};
+function storageGet(key,fallback){
+  try{const raw=localStorage.getItem(key);return raw===null?fallback:JSON.parse(raw)}
+  catch(e){return key in memoryStore?memoryStore[key]:fallback}
+}
+function storageSet(key,value){
+  try{localStorage.setItem(key,JSON.stringify(value))}
+  catch(e){memoryStore[key]=value}
+}
+
+const today=()=>new Date().toISOString().slice(0,10);
+const nowISO=()=>new Date().toISOString();
+const addDays=(days)=>{const d=new Date();d.setDate(d.getDate()+Number(days));return d.toISOString()};
+const escapeHTML=(s='')=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[c]));
+const normalize=(s)=>String(s||'').toLowerCase().trim().replace(/[“”‘’]/g,"'").replace(/[.!?]+$/,'').replace(/\s+/g,' ');
+
+let cards=[];
+let filter='all';
+let mode='feed';
+let saved=new Set(storageGet('peacefeed-saved',[]));
+let notes=storageGet('peacefeed-notes',[]);
+let viewed=storageGet('peacefeed-view-history',{}); // {cardId:{lastViewed, count}}
+let viewedByDay=storageGet('peacefeed-viewed-by-day',{});
+let repeats=storageGet('peacefeed-repeats',{}); // {cardId:{dueAt, scheduledAt}}
+let observer=null;
+
+async function loadCards(){
+  try{
+    if(Array.isArray(window.PEACEFEED_EMBEDDED_CARDS)){cards=window.PEACEFEED_EMBEDDED_CARDS;return}
+    const response=await fetch(`./data/cards.json?v=${Date.now()}`,{cache:'no-store'});
+    if(!response.ok) throw new Error(`HTTP ${response.status}`);
+    const data=await response.json();
+    if(!Array.isArray(data.cards)) throw new Error('cards.json has no cards array');
+    cards=data.cards;
+  }catch(err){
+    console.error('Could not load cards.json',err);
+    feed.innerHTML=`<div class="empty"><strong>Не удалось загрузить карточки.</strong><br><br>Если сайт открыт через GitHub Pages, просто обнови страницу. Если проблема повторяется — проверь, что <code>data/cards.json</code> загружен в репозиторий.</div>`;
+    throw err;
+  }
+}
+
+function isDue(id){const r=repeats[id];return Boolean(r&&new Date(r.dueAt)<=new Date())}
+function unseen(id){return !viewed[id]}
+function cardScore(c){
+  if(isDue(c.id)) return 0;
+  if(unseen(c.id)) return 1;
+  const last=viewed[c.id]?.lastViewed||'1970-01-01';
+  return 2+new Date(last).getTime()/1e15;
+}
+function sortedCards(list){
+  return [...list].sort((a,b)=>{
+    const da=isDue(a.id), db=isDue(b.id);
+    if(da!==db) return da?-1:1;
+    const ua=unseen(a.id), ub=unseen(b.id);
+    if(ua!==ub) return ua?-1:1;
+    return new Date(viewed[a.id]?.lastViewed||0)-new Date(viewed[b.id]?.lastViewed||0);
+  });
+}
+
+function markViewed(id){
+  const d=today();
+  const daySet=new Set(viewedByDay[d]||[]);
+  daySet.add(id); viewedByDay[d]=[...daySet];
+  const prev=viewed[id]||{count:0};
+  viewed[id]={count:(prev.count||0)+1,lastViewed:nowISO()};
+  if(isDue(id)){delete repeats[id];storageSet('peacefeed-repeats',repeats)}
+  storageSet('peacefeed-viewed-by-day',viewedByDay);
+  storageSet('peacefeed-view-history',viewed);
+}
+function setupObserver(){
+  if(observer) observer.disconnect();
+  observer=new IntersectionObserver(entries=>entries.forEach(e=>{
+    if(e.isIntersecting&&e.intersectionRatio>.55) markViewed(e.target.dataset.id)
+  }),{root:feed,threshold:[.55]});
+  $$('.card',feed).forEach(c=>observer.observe(c));
+}
+
+function interactionHTML(inter){
+  if(!inter) return '';
+  if(inter.kind==='reveal') return `<button class="reveal primary">${escapeHTML(inter.label||'показать')}</button><div class="answer">${inter.answer||''}</div>`;
+  if(inter.kind==='open') return `<div class="micro"><strong>${escapeHTML(inter.prompt||'')}</strong></div><textarea class="answer-box" placeholder="${escapeHTML(inter.placeholder||'напиши ответ')}"></textarea><button class="open-check primary">${escapeHTML(inter.label||'сравнить')}</button><div class="answer"><strong>Один хороший вариант:</strong><br>${inter.model||''}${inter.check?`<ul class="checklist">${inter.check.map(x=>`<li>${escapeHTML(x)}</li>`).join('')}</ul>`:''}</div>`;
+  if(inter.kind==='exact') return `<div class="micro"><strong>${escapeHTML(inter.prompt||'')}</strong></div><input class="answer-box exact-input" placeholder="${escapeHTML(inter.placeholder||'твой ответ')}"><button class="exact-check primary">${escapeHTML(inter.label||'проверить')}</button><div class="feedback"></div><div class="answer"><strong>Вариант:</strong><br>${inter.model||''}</div>`;
+  return '';
+}
+
+function currentCards(){
+  let list=cards.filter(c=>filter==='all'||c.cats?.includes(filter));
+  if(mode==='saved') list=list.filter(c=>saved.has(c.id));
+  return sortedCards(list);
+}
+
+function renderFeed(){
+  feed.innerHTML='';
+  const shown=currentCards();
+  if(!shown.length){
+    const msg=mode==='saved'?'Здесь пока пусто. Нажми «♡ сохранить» на карточке — она появится здесь.':'В этой вкладке пока нет карточек.';
+    feed.innerHTML=`<div class="empty">${msg}</div>`;
+    return;
+  }
+  shown.forEach(c=>{
+    const el=tpl.content.firstElementChild.cloneNode(true);
+    el.dataset.id=c.id;
+    $('.pill',el).textContent=c.type||'CARD';
+    $('.time',el).textContent=(isDue(c.id)?'↻ пора повторить · ':'')+(c.time||'');
+    $('h2',el).textContent=c.title||'';
+    $('.body',el).innerHTML=c.bodyHtml||'';
+
+    const inter=$('.interactive',el);
+    inter.innerHTML=interactionHTML(c.interaction);
+    if(c.interaction?.kind==='reveal') $('.reveal',inter)?.addEventListener('click',()=>$('.answer',inter)?.classList.toggle('show'));
+    if(c.interaction?.kind==='open') $('.open-check',inter)?.addEventListener('click',()=>$('.answer',inter)?.classList.add('show'));
+    if(c.interaction?.kind==='exact') $('.exact-check',inter)?.addEventListener('click',()=>{
+      const input=$('.exact-input',inter);const feedback=$('.feedback',inter);const val=normalize(input.value);
+      const ok=(c.interaction.answers||[]).map(normalize).includes(val);
+      feedback.innerHTML=ok?'✓ <strong>Да, этот вариант подходит.</strong>':'Формулировка отличается от варианта, который я проверяю автоматически. Сравни с примером ниже: хороший альтернативный ответ тоже может не совпасть дословно.';
+      feedback.style.color=ok?'#315b2b':'#8E2947';
+      $('.answer',inter)?.classList.add('show');
+    });
+
+    const src=$('.source',el);
+    if(c.source?.url) src.innerHTML=`<span class="source-label">SOURCE / READ MORE</span><a target="_blank" rel="noopener" href="${escapeHTML(c.source.url)}">${escapeHTML(c.source.title||'Источник')} ↗</a>`;
+    else src.innerHTML='<span class="source-label">SHITPOST</span>Это шутка, не factual claim.';
+
+    const saveBtn=$('.save-btn',el); updateSaveButton(saveBtn,c.id);
+    saveBtn.addEventListener('click',()=>toggleSaved(c.id,saveBtn,el));
+    const repeatBtn=$('.repeat-btn',el); updateRepeatButton(repeatBtn,c.id);
+    repeatBtn.addEventListener('click',()=>openRepeatDialog(c.id));
+    $('.note-btn',el).addEventListener('click',()=>openNoteDialog(c.id));
+    feed.appendChild(el);
+  });
+  requestAnimationFrame(()=>{feed.scrollTop=0;setupObserver()});
+  $('#savedToggle').textContent=mode==='saved'?'♥':'♡';
+}
+
+function updateSaveButton(btn,id){
+  btn.classList.toggle('saved',saved.has(id));
+  btn.textContent=saved.has(id)?'♥ сохранено':'♡ сохранить';
+}
+function toggleSaved(id,btn,cardEl){
+  saved.has(id)?saved.delete(id):saved.add(id);
+  storageSet('peacefeed-saved',[...saved]);updateSaveButton(btn,id);
+  if(mode==='saved'&&!saved.has(id)){cardEl.remove();if(!$('.card',feed))feed.innerHTML='<div class="empty">Здесь пока пусто.</div>'}
+  renderTodayStats();
+}
+function updateRepeatButton(btn,id){
+  const r=repeats[id];
+  if(!r){btn.textContent='↻ повторить';btn.classList.remove('scheduled');return}
+  const due=new Date(r.dueAt);
+  const label=due.toLocaleDateString('ru-RU',{day:'numeric',month:'short'});
+  btn.textContent=isDue(id)?'↻ повторить сейчас':`↻ ${label}`;
+  btn.classList.add('scheduled');
+}
+function openRepeatDialog(cardId){
+  $('#repeatCardId').value=cardId;
+  if(typeof repeatDialog.showModal==='function')repeatDialog.showModal();
+}
+$$('.repeat-option').forEach(btn=>btn.addEventListener('click',(e)=>{
+  e.preventDefault();
+  const id=$('#repeatCardId').value; const days=Number(btn.value);
+  repeats[id]={scheduledAt:nowISO(),dueAt:addDays(days)};
+  storageSet('peacefeed-repeats',repeats);
+  repeatDialog.close(); renderFeed();
+}));
+
+function setFilter(next){
+  filter=next;
+  $$('.chip').forEach(x=>x.classList.toggle('active',x.dataset.filter===filter));
+  renderFeed();
+}
+$$('.chip').forEach(b=>b.addEventListener('click',()=>setFilter(b.dataset.filter)));
+$('#savedToggle').addEventListener('click',()=>switchScreen(mode==='saved'?'feed':'saved'));
+
+function switchScreen(next){
+  mode=next;
+  const showingFeed=next==='feed'||next==='saved';
+  feed.hidden=!showingFeed; chips.hidden=!showingFeed;
+  notesScreen.hidden=next!=='notes'; reflectionScreen.hidden=next!=='reflection';
+  $$('.nav-item').forEach(b=>b.classList.toggle('active',b.dataset.screen===next));
+  if(showingFeed)renderFeed();
+  if(next==='notes')renderNotes();
+  if(next==='reflection'){loadReflection();renderTodayStats()}
+  window.scrollTo({top:0,behavior:'auto'});
+}
+$$('.nav-item').forEach(b=>b.addEventListener('click',()=>switchScreen(b.dataset.screen)));
+
+function openNoteDialog(cardId=''){
+  $('#noteForm').reset();$('#noteCardId').value=cardId;
+  const card=cards.find(c=>c.id===cardId);
+  $('#noteDialogTitle').textContent=card?`заметка · ${card.title}`:'новая заметка';
+  if(typeof noteDialog.showModal==='function')noteDialog.showModal();
+}
+$('#newNote').addEventListener('click',()=>openNoteDialog(''));
+$('#noteForm').addEventListener('submit',(e)=>{
+  if(e.submitter?.value==='cancel')return;
+  e.preventDefault();
+  const text=$('#noteText').value.trim();if(!text)return;
+  const cardId=$('#noteCardId').value;
+  notes.unshift({id:crypto.randomUUID?crypto.randomUUID():String(Date.now()),title:$('#noteTitle').value.trim(),text,link:$('#noteLink').value.trim(),cardId,createdAt:nowISO()});
+  storageSet('peacefeed-notes',notes);noteDialog.close();if(mode==='notes')renderNotes();
+});
+function renderNotes(){
+  const list=$('#notesList');
+  if(!notes.length){list.innerHTML='<div class="empty">Пока пусто. Можно сохранять мысли прямо из карточек или добавить свободную заметку.</div>';return}
+  list.innerHTML=notes.map(n=>{const card=cards.find(c=>c.id===n.cardId);return `<article class="note-card"><div class="note-meta">${new Date(n.createdAt).toLocaleString('ru-RU',{day:'numeric',month:'short',hour:'2-digit',minute:'2-digit'})}${card?` · из карточки «${escapeHTML(card.title)}»`:''}</div>${n.title?`<h3>${escapeHTML(n.title)}</h3>`:''}<p>${escapeHTML(n.text)}</p>${n.link?`<a href="${escapeHTML(n.link)}" target="_blank" rel="noopener">${escapeHTML(n.link)} ↗</a>`:''}<div class="note-actions"><button data-delete="${n.id}">удалить</button></div></article>`}).join('');
+  $$('[data-delete]',list).forEach(b=>b.addEventListener('click',()=>{notes=notes.filter(n=>n.id!==b.dataset.delete);storageSet('peacefeed-notes',notes);renderNotes()}));
+}
+
+function reflectionKey(){return `peacefeed-reflection-${today()}`}
+function loadReflection(){const r=storageGet(reflectionKey(),{});$('#reflectionLearned').value=r.learned||'';$('#reflectionPractice').value=r.practice||'';$('#reflectionQuestion').value=r.question||'';$('#reflectionSaved').textContent=''}
+$('#saveReflection').addEventListener('click',()=>{
+  storageSet(reflectionKey(),{learned:$('#reflectionLearned').value,practice:$('#reflectionPractice').value,question:$('#reflectionQuestion').value,updatedAt:nowISO()});
+  $('#reflectionSaved').textContent='сохранено для сегодняшнего дня ✓';setTimeout(()=>$('#reflectionSaved').textContent='',1800);
+});
+function renderTodayStats(){
+  if(!$('#todayStats'))return;
+  const dayViewed=(viewedByDay[today()]||[]).length;
+  const todayNotes=notes.filter(n=>n.createdAt?.slice(0,10)===today()).length;
+  const due=Object.keys(repeats).filter(isDue).length;
+  $('#todayStats').innerHTML=`<div class="stat"><strong>${dayViewed}</strong><span>карточек сегодня</span></div><div class="stat"><strong>${saved.size}</strong><span>в избранном</span></div><div class="stat"><strong>${due}</strong><span>пора повторить</span></div>`;
+}
+
+async function init(){
+  await loadCards();
+  renderFeed();
+  if('serviceWorker' in navigator){window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(console.warn))}
+}
+init().catch(()=>{});

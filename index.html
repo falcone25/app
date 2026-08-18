@@ -4,29 +4,59 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="theme-color" content="#F4E8B8" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
   <link rel="manifest" href="manifest.webmanifest" />
   <link rel="stylesheet" href="styles.css" />
-  <title>Peacefeed</title>
+  <title>peacefeed</title>
 </head>
 <body>
   <header class="topbar">
-    <div>
-      <div class="eyebrow">YOUR CURATED FEED</div>
-      <div class="brand">peacefeed</div>
-    </div>
-    <button id="savedToggle" class="icon-btn" aria-label="Сохранённые">♡</button>
+    <div class="brand">peacefeed</div>
+    <button id="savedToggle" class="icon-btn" aria-label="Избранное">♡</button>
   </header>
 
-  <nav class="chips" aria-label="Фильтры">
+  <nav id="chips" class="chips" aria-label="Фильтры">
     <button class="chip active" data-filter="all">всё</button>
     <button class="chip" data-filter="peace">peace</button>
     <button class="chip" data-filter="english">english</button>
     <button class="chip" data-filter="feminist">feminist</button>
     <button class="chip" data-filter="tools">tools</button>
+    <button class="chip" data-filter="world">🌍 я познаю мир</button>
     <button class="chip" data-filter="fun">fun</button>
   </nav>
 
   <main id="feed" class="feed" aria-live="polite"></main>
+
+  <section id="notesScreen" class="screen" hidden>
+    <div class="screen-head">
+      <div><div class="kicker">NOTEBOOK</div><h1>заметки</h1></div>
+      <button id="newNote" class="primary small">+ новая</button>
+    </div>
+    <div id="notesList" class="stack"></div>
+  </section>
+
+  <section id="reflectionScreen" class="screen" hidden>
+    <div class="screen-head"><div><div class="kicker">TODAY</div><h1>рефлексия</h1></div></div>
+    <div id="todayStats" class="stats"></div>
+    <div class="reflection-card">
+      <label for="reflectionLearned">что я сегодня узнала?</label>
+      <textarea id="reflectionLearned" placeholder="идея, термин, мысль…"></textarea>
+      <label for="reflectionPractice">что я хочу унести в практику?</label>
+      <textarea id="reflectionPractice" placeholder="что попробую на встрече, в работе, в разговоре…"></textarea>
+      <label for="reflectionQuestion">что осталось непонятным или спорным?</label>
+      <textarea id="reflectionQuestion" placeholder="вопрос, сомнение, тема для deep dive…"></textarea>
+      <button id="saveReflection" class="primary wide">сохранить день</button>
+      <div id="reflectionSaved" class="saved-toast"></div>
+    </div>
+  </section>
+
+  <nav class="bottom-nav" aria-label="Основная навигация">
+    <button class="nav-item active" data-screen="feed"><span>⌂</span><small>лента</small></button>
+    <button class="nav-item" data-screen="saved"><span>♡</span><small>избранное</small></button>
+    <button class="nav-item" data-screen="notes"><span>✎</span><small>заметки</small></button>
+    <button class="nav-item" data-screen="reflection"><span>☼</span><small>день</small></button>
+  </nav>
 
   <template id="cardTemplate">
     <article class="card">
@@ -37,10 +67,40 @@
       <div class="source"></div>
       <div class="actions">
         <button class="save-btn">♡ сохранить</button>
-        <span class="swipe-hint">свайп ↓</span>
+        <button class="repeat-btn">↻ повторить</button>
+        <button class="note-btn">✎ заметка</button>
       </div>
     </article>
   </template>
+
+  <dialog id="noteDialog">
+    <form id="noteForm" class="dialog-card" method="dialog">
+      <button class="dialog-close" value="cancel" aria-label="Закрыть">×</button>
+      <div class="kicker">NOTEBOOK</div>
+      <h2 id="noteDialogTitle">новая заметка</h2>
+      <input id="noteCardId" type="hidden" />
+      <input id="noteTitle" placeholder="заголовок (необязательно)" />
+      <textarea id="noteText" required placeholder="что хочется сохранить?"></textarea>
+      <input id="noteLink" type="url" inputmode="url" placeholder="ссылка (необязательно)" />
+      <button class="primary wide" value="save">сохранить заметку</button>
+    </form>
+  </dialog>
+
+  <dialog id="repeatDialog">
+    <form id="repeatForm" class="dialog-card" method="dialog">
+      <button class="dialog-close" value="cancel" aria-label="Закрыть">×</button>
+      <div class="kicker">REPEAT</div>
+      <h2>когда показать снова?</h2>
+      <input id="repeatCardId" type="hidden" />
+      <div class="repeat-options">
+        <button class="secondary repeat-option" value="1">завтра</button>
+        <button class="primary repeat-option" value="3">через 3 дня</button>
+        <button class="secondary repeat-option" value="7">через неделю</button>
+        <button class="secondary repeat-option" value="14">через 2 недели</button>
+      </div>
+      <p class="micro">Когда срок придёт, карточка поднимется ближе к началу ленты.</p>
+    </form>
+  </dialog>
 
   <script src="app.js"></script>
 </body>

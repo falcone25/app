@@ -1,0 +1,46 @@
+{
+  "version": "0.3.0",
+  "publishing": {
+    "dailyTarget": 45,
+    "weeklyTargetApprox": 300,
+    "requireSourceForFactualClaims": true,
+    "newFactualCardsRequireReview": true,
+    "derivedCardsMayAutoPublish": true
+  },
+  "mix": {
+    "peacebuilding": 0.28,
+    "feminist_and_political_economy": 0.20,
+    "english_and_facilitation_english": 0.22,
+    "tools_cases_simulations": 0.12,
+    "world": 0.10,
+    "retrieval_and_repeat": 0.05,
+    "fun": 0.03
+  },
+  "trustedSourceDomains": [
+    "un.org",
+    "unwomen.org",
+    "ohchr.org",
+    "icrc.org",
+    "ilo.org",
+    "berghof-foundation.org",
+    "learnenglish.britishcouncil.org",
+    "bbc.co.uk",
+    "nobelprize.org"
+  ],
+  "worldTopics": [
+    "anthropology",
+    "social psychology",
+    "sociology",
+    "political economy",
+    "organizational theory",
+    "memory studies",
+    "linguistics and framing",
+    "philosophy of responsibility and forgiveness",
+    "disability studies",
+    "queer theory",
+    "emotion studies",
+    "collective action and cooperation",
+    "media and propaganda studies",
+    "history of social movements"
+  ]
+}

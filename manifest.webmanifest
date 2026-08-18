@@ -1,9 +1,9 @@
 {
-  "name":"Peacefeed",
-  "short_name":"Peacefeed",
+  "name":"peacefeed",
+  "short_name":"peacefeed",
   "start_url":"./index.html",
   "display":"standalone",
   "background_color":"#F4E8B8",
   "theme_color":"#F4E8B8",
-  "description":"A personal peacebuilding + English learning feed"
+  "description":"Personal peacebuilding, feminist analysis, facilitation and English learning feed"
 }
