@@ -28,6 +28,30 @@
 
   <main id="feed" class="feed" aria-live="polite"></main>
 
+
+  <section id="trainingScreen" class="screen" hidden>
+    <div class="screen-head"><div><div class="kicker">GYM MODE</div><h1>🎧 тренировка</h1></div></div>
+    <div class="training-controls">
+      <div class="training-row">
+        <button class="media-chip active" data-media-status="todo">не слушала</button>
+        <button class="media-chip" data-media-status="all">все</button>
+        <button class="media-chip" data-media-status="done">✓ прослушано</button>
+        <button class="media-chip" data-media-status="saved">♡ сохранено</button>
+      </div>
+      <div class="training-row">
+        <button class="media-chip active" data-duration="all">любая длина</button>
+        <button class="media-chip" data-duration="15">до 15 мин</button>
+        <button class="media-chip" data-duration="30">до 30 мин</button>
+        <button class="media-chip" data-duration="60">до часа</button>
+        <button class="media-chip" data-duration="90">до 90 мин</button>
+      </div>
+      <div class="training-row">
+        <button id="pickMedia" class="primary">🎲 подбери мне</button>
+      </div>
+    </div>
+    <div id="mediaList" class="stack"></div>
+  </section>
+
   <section id="notesScreen" class="screen" hidden>
     <div class="screen-head">
       <div><div class="kicker">NOTEBOOK</div><h1>заметки</h1></div>
@@ -54,6 +78,7 @@
   <nav class="bottom-nav" aria-label="Основная навигация">
     <button class="nav-item active" data-screen="feed"><span>⌂</span><small>лента</small></button>
     <button class="nav-item" data-screen="saved"><span>♡</span><small>избранное</small></button>
+    <button class="nav-item" data-screen="training"><span>🎧</span><small>тренировка</small></button>
     <button class="nav-item" data-screen="notes"><span>✎</span><small>заметки</small></button>
     <button class="nav-item" data-screen="reflection"><span>☼</span><small>день</small></button>
   </nav>

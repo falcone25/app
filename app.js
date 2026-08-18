@@ -5,6 +5,7 @@ const feed=$('#feed');
 const tpl=$('#cardTemplate');
 const chips=$('#chips');
 const notesScreen=$('#notesScreen');
+const trainingScreen=$('#trainingScreen');
 const reflectionScreen=$('#reflectionScreen');
 const noteDialog=$('#noteDialog');
 const repeatDialog=$('#repeatDialog');
@@ -34,18 +35,32 @@ let viewed=storageGet('peacefeed-view-history',{}); // {cardId:{lastViewed, coun
 let viewedByDay=storageGet('peacefeed-viewed-by-day',{});
 let repeats=storageGet('peacefeed-repeats',{}); // {cardId:{dueAt, scheduledAt}}
 let observer=null;
+let media=[];
+let mediaStatus='todo';
+let mediaDuration='all';
+let mediaDone=storageGet('peacefeed-media-done',{});
+let mediaSaved=new Set(storageGet('peacefeed-media-saved',[]));
+let mediaReviews=storageGet('peacefeed-media-reviews',{});
+
+async function loadMedia(){
+  try{
+    const response=await fetch(`./media.json?v=${Date.now()}`,{cache:'no-store'});
+    if(!response.ok) throw new Error(`HTTP ${response.status}`);
+    const data=await response.json(); media=Array.isArray(data.items)?data.items:[];
+  }catch(e){console.warn('Could not load media.json',e);media=[]}
+}
 
 async function loadCards(){
   try{
     if(Array.isArray(window.PEACEFEED_EMBEDDED_CARDS)){cards=window.PEACEFEED_EMBEDDED_CARDS;return}
-    const response=await fetch(`./data/cards.json?v=${Date.now()}`,{cache:'no-store'});
+    const response=await fetch(`./cards.json?v=${Date.now()}`,{cache:'no-store'});
     if(!response.ok) throw new Error(`HTTP ${response.status}`);
     const data=await response.json();
     if(!Array.isArray(data.cards)) throw new Error('cards.json has no cards array');
     cards=data.cards;
   }catch(err){
     console.error('Could not load cards.json',err);
-    feed.innerHTML=`<div class="empty"><strong>Не удалось загрузить карточки.</strong><br><br>Если сайт открыт через GitHub Pages, просто обнови страницу. Если проблема повторяется — проверь, что <code>data/cards.json</code> загружен в репозиторий.</div>`;
+    feed.innerHTML=`<div class="empty"><strong>Не удалось загрузить карточки.</strong><br><br>Если сайт открыт через GitHub Pages, просто обнови страницу. Если проблема повторяется — проверь, что <code>cards.json</code> загружен в репозиторий.</div>`;
     throw err;
   }
 }
@@ -185,9 +200,10 @@ function switchScreen(next){
   mode=next;
   const showingFeed=next==='feed'||next==='saved';
   feed.hidden=!showingFeed; chips.hidden=!showingFeed;
-  notesScreen.hidden=next!=='notes'; reflectionScreen.hidden=next!=='reflection';
+  notesScreen.hidden=next!=='notes'; reflectionScreen.hidden=next!=='reflection'; trainingScreen.hidden=next!=='training';
   $$('.nav-item').forEach(b=>b.classList.toggle('active',b.dataset.screen===next));
   if(showingFeed)renderFeed();
+  if(next==='training')renderMedia();
   if(next==='notes')renderNotes();
   if(next==='reflection'){loadReflection();renderTodayStats()}
   window.scrollTo({top:0,behavior:'auto'});
@@ -216,6 +232,58 @@ function renderNotes(){
   $$('[data-delete]',list).forEach(b=>b.addEventListener('click',()=>{notes=notes.filter(n=>n.id!==b.dataset.delete);storageSet('peacefeed-notes',notes);renderNotes()}));
 }
 
+
+function filteredMedia(){
+  return media.filter(m=>{
+    const done=Boolean(mediaDone[m.id]);
+    if(mediaStatus==='todo'&&done)return false;
+    if(mediaStatus==='done'&&!done)return false;
+    if(mediaStatus==='saved'&&!mediaSaved.has(m.id))return false;
+    if(mediaDuration!=='all'&&m.minutes&&m.minutes>Number(mediaDuration))return false;
+    return true;
+  });
+}
+function renderMedia(){
+  const list=$('#mediaList'); const items=filteredMedia();
+  if(!items.length){list.innerHTML='<div class="empty">Под этот фильтр пока ничего не нашлось.</div>';return}
+  list.innerHTML=items.map(m=>{
+    const review=mediaReviews[m.id]||{}; const done=Boolean(mediaDone[m.id]);
+    return `<article class="media-card ${done?'done':''}" data-media-id="${m.id}">
+      <div class="media-meta">${escapeHTML(m.format||'материал')} · ${escapeHTML(m.duration||'длительность не указана')} · ${escapeHTML(m.language||'')}</div>
+      <h3>${escapeHTML(m.title)}</h3><div class="media-series">${escapeHTML(m.series||'')} · ${escapeHTML(m.topic||'')}</div>
+      <div class="media-why">${escapeHTML(m.why||'')}</div>
+      <div class="media-actions">
+        <a class="listen" href="${escapeHTML(m.url)}" target="_blank" rel="noopener">▶ открыть ↗</a>
+        <button class="media-save">${mediaSaved.has(m.id)?'♥ сохранено':'♡ сохранить'}</button>
+        <button class="done-btn ${done?'done':''}">${done?'✓ прослушано':'✓ отметить прослушанным'}</button>
+      </div>
+      ${done?`<div class="media-review">
+        <label>как тебе?</label><div class="rating">${[1,2,3,4,5].map(n=>`<button data-rating="${n}" class="${Number(review.rating)===n?'active':''}">${n}</button>`).join('')}</div>
+        <label>главная мысль</label><textarea class="media-insight" placeholder="что хочется унести с собой?">${escapeHTML(review.insight||'')}</textarea>
+        <label>заметка</label><textarea class="media-note" placeholder="мысль, вопрос, ссылка…">${escapeHTML(review.note||'')}</textarea>
+        <button class="primary save-media-review">сохранить</button>
+      </div>`:''}
+    </article>`
+  }).join('');
+  $$('.media-card',list).forEach(card=>{
+    const id=card.dataset.mediaId;
+    $('.media-save',card).addEventListener('click',()=>{mediaSaved.has(id)?mediaSaved.delete(id):mediaSaved.add(id);storageSet('peacefeed-media-saved',[...mediaSaved]);renderMedia()});
+    $('.done-btn',card).addEventListener('click',()=>{if(mediaDone[id])delete mediaDone[id];else mediaDone[id]={completedAt:nowISO()};storageSet('peacefeed-media-done',mediaDone);renderMedia()});
+    $$('[data-rating]',card).forEach(b=>b.addEventListener('click',()=>{mediaReviews[id]={...(mediaReviews[id]||{}),rating:Number(b.dataset.rating)};storageSet('peacefeed-media-reviews',mediaReviews);renderMedia()}));
+    $('.save-media-review',card)?.addEventListener('click',()=>{mediaReviews[id]={...(mediaReviews[id]||{}),insight:$('.media-insight',card).value.trim(),note:$('.media-note',card).value.trim()};storageSet('peacefeed-media-reviews',mediaReviews);const b=$('.save-media-review',card);b.textContent='сохранено ✓';setTimeout(()=>b.textContent='сохранить',1200)});
+  });
+}
+$$('[data-media-status]').forEach(b=>b.addEventListener('click',()=>{mediaStatus=b.dataset.mediaStatus;$$('[data-media-status]').forEach(x=>x.classList.toggle('active',x===b));renderMedia()}));
+$$('[data-duration]').forEach(b=>b.addEventListener('click',()=>{mediaDuration=b.dataset.duration;$$('[data-duration]').forEach(x=>x.classList.toggle('active',x===b));renderMedia()}));
+$('#pickMedia')?.addEventListener('click',()=>{
+  const candidates=filteredMedia().filter(m=>!mediaDone[m.id]);
+  if(!candidates.length)return;
+  const pick=candidates[Math.floor(Math.random()*candidates.length)];
+  mediaStatus='all';mediaDuration='all';
+  renderMedia();
+  requestAnimationFrame(()=>document.querySelector(`[data-media-id="${pick.id}"]`)?.scrollIntoView({behavior:'smooth',block:'center'}));
+});
+
 function reflectionKey(){return `peacefeed-reflection-${today()}`}
 function loadReflection(){const r=storageGet(reflectionKey(),{});$('#reflectionLearned').value=r.learned||'';$('#reflectionPractice').value=r.practice||'';$('#reflectionQuestion').value=r.question||'';$('#reflectionSaved').textContent=''}
 $('#saveReflection').addEventListener('click',()=>{
@@ -231,7 +299,7 @@ function renderTodayStats(){
 }
 
 async function init(){
-  await loadCards();
+  await Promise.all([loadCards(),loadMedia()]);
   renderFeed();
   if('serviceWorker' in navigator){window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(console.warn))}
 }
