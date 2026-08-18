@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#F4E8B8" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="stylesheet" href="styles.css" />
+  <title>Peacefeed</title>
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <div class="eyebrow">YOUR CURATED FEED</div>
+      <div class="brand">peacefeed</div>
+    </div>
+    <button id="savedToggle" class="icon-btn" aria-label="Сохранённые">♡</button>
+  </header>
+
+  <nav class="chips" aria-label="Фильтры">
+    <button class="chip active" data-filter="all">всё</button>
+    <button class="chip" data-filter="peace">peace</button>
+    <button class="chip" data-filter="english">english</button>
+    <button class="chip" data-filter="feminist">feminist</button>
+    <button class="chip" data-filter="tools">tools</button>
+    <button class="chip" data-filter="fun">fun</button>
+  </nav>
+
+  <main id="feed" class="feed" aria-live="polite"></main>
+
+  <template id="cardTemplate">
+    <article class="card">
+      <div class="card-meta"><span class="pill"></span><span class="time"></span></div>
+      <h2></h2>
+      <div class="body"></div>
+      <div class="interactive"></div>
+      <div class="source"></div>
+      <div class="actions">
+        <button class="save-btn">♡ сохранить</button>
+        <span class="swipe-hint">свайп ↓</span>
+      </div>
+    </article>
+  </template>
+
+  <script src="app.js"></script>
+</body>
+</html>
